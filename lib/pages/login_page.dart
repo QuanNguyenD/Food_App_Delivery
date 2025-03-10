@@ -1,5 +1,6 @@
 import 'package:appper/components/my_button.dart';
 import 'package:appper/components/my_textfield.dart';
+import 'package:appper/pages/home_page.dart';
 import 'package:flutter/material.dart'; 
 class LoginPage extends StatefulWidget {
 
@@ -15,6 +16,17 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController emailController = TextEditingController();
 
   final TextEditingController passwordController = TextEditingController();
+
+  //login function
+  void login() {
+    
+
+    //navigate to home page
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const HomePage()),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -60,9 +72,7 @@ class _LoginPageState extends State<LoginPage> {
 
             //sign in button
             MyButton(
-              onTap: (){
-                 
-              },
+              onTap: login,
               text: "Sign in"),
 
             const SizedBox(height: 20),
